@@ -16,6 +16,11 @@ button {
     box-shadow: 0px 3px #000;
 }
 
+.clickable {
+    pointer-events: auto;
+    cursor: pointer;
+}
+
 button,
 button:hover,
 button:visited {
@@ -65,14 +70,6 @@ h1 {
     background-color: #c3c2ab;
 }
 
-#entry {
-    position: relative;
-    left:90%;
-    bottom:20px;
-    margin-right: 10px;
-    font-size: 35px;
-}
-
 #buttons {
     font-size: 16px;
     font-weight: bold;
@@ -115,3 +112,20 @@ h1 {
     left: 40%;
     color:white;
 }
+
+.left {
+    position: relative;
+    left:83%;
+    bottom:20px;
+    margin-right: 10px;
+    font-size: 35px;
+}
+
+.entry {
+    position: relative;
+    left:90%;
+    bottom:20px;
+    margin-right: 10px;
+    font-size: 35px;
+}
+
