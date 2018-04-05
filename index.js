@@ -1,5 +1,7 @@
 var variable = [];
+var invisibleVar = [];
 var globalEqual = 0;
+var counter = 0;
 
 function getSum(a, b) {
     return a + b;
@@ -17,9 +19,57 @@ function getProduct(a, b) {
     return a * b;
 }
 
+function removeClasses() {
+    $('#answer').removeClass('left2');
+    $('#answer').removeClass('left3');
+    $('#answer').removeClass('left4');
+    $('#answer').removeClass('left5');
+    $('#answer').removeClass('left6');
+    $('#answer').removeClass('left7');
+    $('#answer').removeClass('left8');
+    $('#answer').removeClass('left9');
+    $('#answer').removeClass('left10');
+    $('#answer').removeClass('left11');
+    $('#answer').removeClass('left12');
+    $('#answer').removeClass('left13');
+}
+
 function testingForNumbers() {
-    if (variable[0] > 9) {
-        $('#entry').addClass('left');
+    if (variable[0] > 9 && variable[0] <= 99) {
+        $('#answer').addClass('left2');
+    } else if (variable[0] >= 99 && variable[0] <= 999) {
+        $('#answer').removeClass('left2');
+        $('#answer').addClass('left3');
+    } else if (variable[0] >= 999 && variable[0] <= 9999) {
+        $('#answer').removeClass('left3');
+        $('#answer').addClass('left4');
+    } else if (variable[0] >= 9999 && variable[0] <= 99999) {
+        $('#answer').removeClass('left4');
+        $('#answer').addClass('left5');
+    } else if (variable[0] >= 99999 && variable[0] <= 999999) {
+        $('#answer').removeClass('left5');
+        $('#answer').addClass('left6');
+    } else if (variable[0] >= 999999 && variable[0] <= 9999999) {
+        $('#answer').removeClass('left6');
+        $('#answer').addClass('left7');
+    } else if (variable[0] >= 9999999 && variable[0] <= 99999999) {
+        $('#answer').removeClass('left7');
+        $('#answer').addClass('left8');
+    } else if (variable[0] >= 99999999 && variable[0] <= 999999999) {
+        $('#answer').removeClass('left8');
+        $('#answer').addClass('left9');
+    } else if (variable[0] >= 999999999 && variable[0] <= 9999999999) {
+        $('#answer').removeClass('left9');
+        $('#answer').addClass('left10');
+    } else if (variable[0] >= 9999999999 && variable[0] <= 99999999999) {
+        $('#answer').removeClass('left10');
+        $('#answer').addClass('left11');
+    } else if (variable[0] >= 99999999999 && variable[0] <= 999999999999) {
+        $('#answer').removeClass('left11');
+        $('#answer').addClass('left12');
+    } else if (variable[0] >= 999999999999 && variable[0] <= 9999999999999) {
+        $('#answer').removeClass('left12');
+        $('#answer').addClass('left13');
     }
 }
 
@@ -46,78 +96,290 @@ window.onload = function () {
     console.log(variable);
 
     nine.onclick = function () {
-
-        if (variable.length < 1) {
-            variable = [];
-            variable[0] = "9";
-            $('#answer').text(variable[0]);
-            testingForNumbers();
-        } else if (variable.length === 1) {
-            variable[0] += "9";
-            $('#answer').text(variable[0]);
-            testingForNumbers();
-          console.log(variable[0]);
-        } else if (variable.length === 2) {
-            variable[2] = "9";
-            $('#answer').text(variable[0]);
-            testingForNumbers();
-        } else if (variable.length > 2) {
-            variable[2] += "9";
-            $('#answer').text(variable[0]);
-            testingForNumbers();
+        counter += 1;
+        if (counter < 13) {
+            if (variable.length < 1) {
+                variable = [];
+                variable[0] = nine.value;
+                variable[0] = parseInt(variable[0]);
+                $('#answer').text(variable[0]);
+                testingForNumbers();
+            } else if (variable.length === 1) {
+                variable[0] += "9";
+                variable[0] = parseInt(variable[0]);
+                $('#answer').text(variable[0]);
+                testingForNumbers();
+            } else if (variable.length === 2) {
+                variable[2] = "9";
+                variable[2] = parseInt(variable[2]);
+                $('#answer').text(variable[0]);
+                testingForNumbers();
+            } else if (variable.length > 2) {
+                variable[2] += "9";
+                variable[2] = parseInt(variable[2]);
+                $('#answer').text(variable[0]);
+                testingForNumbers();
+            }
         }
     };
 
     eight.onclick = function () {
-        variable[0] = eight.value;
-        $('#answer').text(eight.value);
+        counter += 1;
+        if (counter < 13) {
+            if (variable.length < 1) {
+                variable = [];
+                variable[0] = eight.value;
+                variable[0] = parseInt(variable[0]);
+                $('#answer').text(variable[0]);
+                testingForNumbers();
+            } else if (variable.length === 1) {
+                variable[0] += "8";
+                variable[0] = parseInt(variable[0]);
+                $('#answer').text(variable[0]);
+                testingForNumbers();
+            } else if (variable.length === 2) {
+                variable[2] = "8";
+                variable[2] = parseInt(variable[2]);
+                $('#answer').text(variable[0]);
+                testingForNumbers();
+            } else if (variable.length > 2) {
+                variable[2] += "8";
+                variable[2] = parseInt(variable[2]);
+                $('#answer').text(variable[0]);
+                testingForNumbers();
+            }
+        }
     };
 
     seven.onclick = function () {
-        variable[0] = seven.value;
-        $('#answer').text(seven.value);
+        counter += 1;
+        if (counter < 13) {
+            if (variable.length < 1) {
+                variable = [];
+                variable[0] = seven.value;
+                variable[0] = parseInt(variable[0]);
+                $('#answer').text(variable[0]);
+                testingForNumbers();
+            } else if (variable.length === 1) {
+                variable[0] += "7";
+                variable[0] = parseInt(variable[0]);
+                $('#answer').text(variable[0]);
+                testingForNumbers();
+            } else if (variable.length === 2) {
+                variable[2] = "7";
+                variable[2] = parseInt(variable[2]);
+                $('#answer').text(variable[0]);
+                testingForNumbers();
+            } else if (variable.length > 2) {
+                variable[2] += "7";
+                variable[2] = parseInt(variable[2]);
+                $('#answer').text(variable[0]);
+                testingForNumbers();
+            }
+        }
     };
 
     six.onclick = function () {
-        variable[0] = six.value;
-        $('#answer').text(six.value);
+        counter += 1;
+        if (counter < 13) {
+            if (variable.length < 1) {
+                variable = [];
+                variable[0] = six.value;
+                variable[0] = parseInt(variable[0]);
+                $('#answer').text(variable[0]);
+                testingForNumbers();
+            } else if (variable.length === 1) {
+                variable[0] += "6";
+                variable[0] = parseInt(variable[0]);
+                $('#answer').text(variable[0]);
+                testingForNumbers();
+            } else if (variable.length === 2) {
+                variable[2] = "6";
+                variable[2] = parseInt(variable[2]);
+                $('#answer').text(variable[0]);
+                testingForNumbers();
+            } else if (variable.length > 2) {
+                variable[2] += "6";
+                variable[2] = parseInt(variable[2]);
+                $('#answer').text(variable[0]);
+                testingForNumbers();
+            }
+        }
     };
 
     five.onclick = function () {
-        variable[0] = five.value;
-        $('#answer').text(five.value);
+        counter += 1;
+        if (counter < 13) {
+            if (variable.length < 1) {
+                variable = [];
+                variable[0] = five.value;
+                variable[0] = parseInt(variable[0]);
+                $('#answer').text(variable[0]);
+                testingForNumbers();
+            } else if (variable.length === 1) {
+                variable[0] += "5";
+                variable[0] = parseInt(variable[0]);
+                $('#answer').text(variable[0]);
+                testingForNumbers();
+            } else if (variable.length === 2) {
+                variable[2] = "5";
+                variable[2] = parseInt(variable[2]);
+                $('#answer').text(variable[0]);
+                testingForNumbers();
+            } else if (variable.length > 2) {
+                variable[2] += "5";
+                variable[2] = parseInt(variable[2]);
+                $('#answer').text(variable[0]);
+                testingForNumbers();
+            }
+        }
     };
 
     four.onclick = function () {
-        variable[0] = four.value;
-        $('#answer').text(four.value);
+        counter += 1;
+        if (counter < 13) {
+            if (variable.length < 1) {
+                variable = [];
+                variable[0] = four.value;
+                variable[0] = parseInt(variable[0]);
+                $('#answer').text(variable[0]);
+                testingForNumbers();
+            } else if (variable.length === 1) {
+                variable[0] += "4";
+                variable[0] = parseInt(variable[0]);
+                $('#answer').text(variable[0]);
+                testingForNumbers();
+            } else if (variable.length === 2) {
+                variable[2] = "4";
+                variable[2] = parseInt(variable[2]);
+                $('#answer').text(variable[0]);
+                testingForNumbers();
+            } else if (variable.length > 2) {
+                variable[2] += "4";
+                variable[2] = parseInt(variable[2]);
+                $('#answer').text(variable[0]);
+                testingForNumbers();
+            }
+        }
     };
 
     three.onclick = function () {
-        variable[0] = three.value;
-        $('#answer').text(three.value);
+        counter += 1;
+        if (counter < 13) {
+            if (variable.length < 1) {
+                variable = [];
+                variable[0] = three.value;
+                variable[0] = parseInt(variable[0]);
+                $('#answer').text(variable[0]);
+                testingForNumbers();
+            } else if (variable.length === 1) {
+                variable[0] += "3";
+                variable[0] = parseInt(variable[0]);
+                $('#answer').text(variable[0]);
+                testingForNumbers();
+            } else if (variable.length === 2) {
+                variable[2] = "3";
+                variable[2] = parseInt(variable[2]);
+                $('#answer').text(variable[0]);
+                testingForNumbers();
+            } else if (variable.length > 2) {
+                variable[2] += "3";
+                variable[2] = parseInt(variable[2]);
+                $('#answer').text(variable[0]);
+                testingForNumbers();
+            }
+        }
     };
 
     two.onclick = function () {
-        variable[0] = two.value;
-        $('#answer').text(two.value);
+        counter += 1;
+        if (counter < 13) {
+            if (variable.length < 1) {
+                variable = [];
+                variable[0] = two.value;
+                variable[0] = parseInt(variable[0]);
+                $('#answer').text(variable[0]);
+                testingForNumbers();
+            } else if (variable.length === 1) {
+                variable[0] += "2";
+                variable[0] = parseInt(variable[0]);
+                $('#answer').text(variable[0]);
+                testingForNumbers();
+            } else if (variable.length === 2) {
+                variable[2] = "2";
+                variable[2] = parseInt(variable[2]);
+                $('#answer').text(variable[0]);
+                testingForNumbers();
+            } else if (variable.length > 2) {
+                variable[2] += "2";
+                variable[2] = parseInt(variable[2]);
+                $('#answer').text(variable[0]);
+                testingForNumbers();
+            }
+        }
     };
 
     one.onclick = function () {
-        variable[0] = one.value;
-        $('#answer').text(one.value);
+        counter += 1;
+        if (counter < 13) {
+            if (variable.length < 1) {
+                variable = [];
+                variable[0] = one.value;
+                variable[0] = parseInt(variable[0]);
+                $('#answer').text(variable[0]);
+                testingForNumbers();
+            } else if (variable.length === 1) {
+                variable[0] += "1";
+                variable[0] = parseInt(variable[0]);
+                $('#answer').text(variable[0]);
+                testingForNumbers();
+            } else if (variable.length === 2) {
+                variable[2] = "1";
+                variable[2] = parseInt(variable[2]);
+                $('#answer').text(variable[0]);
+                testingForNumbers();
+            } else if (variable.length > 2) {
+                variable[2] += "1";
+                variable[2] = parseInt(variable[2]);
+                $('#answer').text(variable[0]);
+                testingForNumbers();
+            }
+        }
     };
 
     zero.onclick = function () {
-        variable[0] = zero.value;
-        $('#answer').text(zero.value);
+        counter += 1;
+        if (counter < 13) {
+            if (variable.length < 1) {
+                variable = [];
+                variable[0] = zero.value;
+                variable[0] = parseInt(variable[0]);
+                $('#answer').text(variable[0]);
+                testingForNumbers();
+            } else if (variable.length === 1) {
+                variable[0] += "0";
+                variable[0] = parseInt(variable[0]);
+                $('#answer').text(variable[0]);
+                testingForNumbers();
+            } else if (variable.length === 2) {
+                variable[2] = "0";
+                variable[2] = parseInt(variable[2]);
+                $('#answer').text(variable[0]);
+                testingForNumbers();
+            } else if (variable.length > 2) {
+                variable[2] += "0";
+                variable[2] = parseInt(variable[2]);
+                $('#answer').text(variable[0]);
+                testingForNumbers();
+            }
+        }
     };
 
     divide.onclick = function () {
-        if (variable.length === 1) {
-            variable[1] = divide.value;
-            $('#answer').text(divide.value);
-        }
+        variable[1] = "/";
+        variable[0] += variable[1];
+        $('#answer').text(variable[0]);
+        console.log(variable);
     };
 
     plus.onclick = function () {
@@ -158,6 +420,7 @@ window.onload = function () {
     };
 
     ac.onclick = function () {
+        removeClasses();
         variable = [];
         globalEqual = 0;
         variable[0] = zero.value;
@@ -165,6 +428,7 @@ window.onload = function () {
     };
 
     ce.onclick = function () {
+        removeClasses();
         variable = [];
         globalEqual = 0;
         variable[0] = zero.value;
