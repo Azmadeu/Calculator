@@ -423,6 +423,7 @@ window.onload = function () {
         removeClasses();
         variable = [];
         globalEqual = 0;
+        counter = 0;
         variable[0] = zero.value;
         $('#answer').text(0);
     };
