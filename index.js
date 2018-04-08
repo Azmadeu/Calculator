@@ -479,7 +479,8 @@ window.onload = function () {
             removeClasses();
             variable[1] = "/";
             $('#answer').text(variable[1]);
-            console.log(variable);
+        }else if (globalEqual === 0 && variable[2]){
+            equal.onclick();
         }
     };
 
@@ -494,6 +495,8 @@ window.onload = function () {
             variable[0] = globalEqual;
             variable[1] = "+";
             $('#answer').text(variable[1]);
+        } else if (globalEqual === 0 && variable[2]){
+            equal.onclick();
         }
     };
 
@@ -502,6 +505,8 @@ window.onload = function () {
             removeClasses();
             variable[1] = "-";
             $('#answer').text(variable[1]);
+        } else if (globalEqual === 0 && variable[2]){
+            equal.onclick();
         }
     };
 
@@ -510,6 +515,8 @@ window.onload = function () {
             removeClasses();
             variable[1] = "*";
             $('#answer').text(variable[1]);
+        }else if (globalEqual === 0 && variable[2]){
+            equal.onclick();
         }
     };
 
