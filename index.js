@@ -1,5 +1,5 @@
 var variable = [];
-var invisibleVar = [];
+var arrayLength = [];
 var globalEqual = 0;
 var counter = 0;
 
@@ -34,44 +34,125 @@ function removeClasses() {
     $('#answer').removeClass('left13');
 }
 
-function testingForNumbers() {
-    if (variable[0] > 9 && variable[0] <= 99) {
+function testingForEqual() {
+    if (globalEqual !== 0) {
+        variable = [];
+        counter = 0;
+        arrayLength = [];
+        variable[0] = globalEqual;
+        removeClasses();
+    }
+}
+
+function testingForNumbersInGlobalEqual() {
+    arrayLength = [];
+    globalEqual = globalEqual.toString();
+    arrayLength = globalEqual.split('');
+
+    if (arrayLength.length === 2) {
         $('#answer').addClass('left2');
-    } else if (variable[0] >= 99 && variable[0] <= 999) {
+    } else if (arrayLength.length === 3) {
+        $('#answer').addClass('left3');
+    } else if (arrayLength.length === 4) {
+        $('#answer').addClass('left4');
+    } else if (arrayLength.length === 5) {
+        $('#answer').addClass('left5');
+    } else if (arrayLength.length === 6) {
+        $('#answer').addClass('left6');
+    } else if (arrayLength.length === 7) {
+        $('#answer').addClass('left7');
+    } else if (arrayLength.length === 8) {
+        $('#answer').addClass('left8');
+    } else if (arrayLength.length === 9) {
+        $('#answer').addClass('left9');
+    } else if (arrayLength.length === 10) {
+        $('#answer').addClass('left10');
+    } else if (arrayLength.length=== 11) {
+        $('#answer').addClass('left11');
+    } else if (arrayLength.length === 12) {
+        $('#answer').addClass('left12');
+    } else if (arrayLength.length > 13) {
+        $('#answer').addClass('left6');
+        $('#answer').text("ERROR!");
+    }
+    globalEqual = parseInt(globalEqual);
+}
+
+function testingForNumbers() {
+    arrayLength = [];
+    variable[0] = variable.toString();
+    arrayLength = variable[0].split('');
+
+    if (arrayLength.length === 2) {
+        $('#answer').addClass('left2');
+    } else if (arrayLength.length === 3) {
+        $('#answer').addClass('left3');
+    } else if (arrayLength.length === 4) {
+        $('#answer').addClass('left4');
+    } else if (arrayLength.length === 5) {
+        $('#answer').addClass('left5');
+    } else if (arrayLength.length === 6) {
+        $('#answer').addClass('left6');
+    } else if (arrayLength.length === 7) {
+        $('#answer').addClass('left7');
+    } else if (arrayLength.length === 8) {
+        $('#answer').addClass('left8');
+    } else if (arrayLength.length === 9) {
+        $('#answer').addClass('left9');
+    } else if (arrayLength.length === 10) {
+        $('#answer').addClass('left10');
+    } else if (arrayLength.length=== 11) {
+        $('#answer').addClass('left11');
+    } else if (arrayLength.length === 12) {
+        $('#answer').addClass('left12');
+    } else if (arrayLength.length > 13) {
+        $('#answer').addClass('left6');
+        $('#answer').text("ERROR!");
+    }
+    variable[0] = parseInt(variable[0]);
+}
+
+function testingForNumbersVar2() {
+    if (variable[2] > 9 && variable[2] <= 99) {
+        $('#answer').addClass('left2');
+    } else if (variable[2] >= 99 && variable[2] <= 999) {
         $('#answer').removeClass('left2');
         $('#answer').addClass('left3');
-    } else if (variable[0] >= 999 && variable[0] <= 9999) {
+    } else if (variable[2] >= 999 && variable[2] <= 9999) {
         $('#answer').removeClass('left3');
         $('#answer').addClass('left4');
-    } else if (variable[0] >= 9999 && variable[0] <= 99999) {
+    } else if (variable[2] >= 9999 && variable[2] <= 99999) {
         $('#answer').removeClass('left4');
         $('#answer').addClass('left5');
-    } else if (variable[0] >= 99999 && variable[0] <= 999999) {
+    } else if (variable[2] >= 99999 && variable[2] <= 999999) {
         $('#answer').removeClass('left5');
         $('#answer').addClass('left6');
-    } else if (variable[0] >= 999999 && variable[0] <= 9999999) {
+    } else if (variable[2] >= 999999 && variable[2] <= 9999999) {
         $('#answer').removeClass('left6');
         $('#answer').addClass('left7');
-    } else if (variable[0] >= 9999999 && variable[0] <= 99999999) {
+    } else if (variable[2] >= 9999999 && variable[2] <= 99999999) {
         $('#answer').removeClass('left7');
         $('#answer').addClass('left8');
-    } else if (variable[0] >= 99999999 && variable[0] <= 999999999) {
+    } else if (variable[2] >= 99999999 && variable[2] <= 999999999) {
         $('#answer').removeClass('left8');
         $('#answer').addClass('left9');
-    } else if (variable[0] >= 999999999 && variable[0] <= 9999999999) {
+    } else if (variable[2] >= 999999999 && variable[2] <= 9999999999) {
         $('#answer').removeClass('left9');
         $('#answer').addClass('left10');
-    } else if (variable[0] >= 9999999999 && variable[0] <= 99999999999) {
+    } else if (variable[2] >= 9999999999 && variable[2] <= 99999999999) {
         $('#answer').removeClass('left10');
         $('#answer').addClass('left11');
-    } else if (variable[0] >= 99999999999 && variable[0] <= 999999999999) {
+    } else if (variable[2] >= 99999999999 && variable[2] <= 999999999999) {
         $('#answer').removeClass('left11');
         $('#answer').addClass('left12');
-    } else if (variable[0] >= 999999999999 && variable[0] <= 9999999999999) {
+    } else if (variable[2] >= 999999999999 && variable[2] <= 9999999999999) {
         $('#answer').removeClass('left12');
         $('#answer').addClass('left13');
     }
 }
+
+
+
 
 window.onload = function () {
     var ac = $('button')[0];
@@ -92,11 +173,11 @@ window.onload = function () {
     var zero = $('button')[15];
     var tochka = $('button')[16];
     var equal = $('button')[17];
-    console.log(divide.value);
-    console.log(variable);
 
     nine.onclick = function () {
+        testingForEqual();
         counter += 1;
+
         if (counter < 13) {
             if (variable.length < 1) {
                 variable = [];
@@ -112,19 +193,21 @@ window.onload = function () {
             } else if (variable.length === 2) {
                 variable[2] = "9";
                 variable[2] = parseInt(variable[2]);
-                $('#answer').text(variable[0]);
-                testingForNumbers();
+                $('#answer').text(variable[2]);
+                testingForNumbersVar2();
             } else if (variable.length > 2) {
                 variable[2] += "9";
                 variable[2] = parseInt(variable[2]);
-                $('#answer').text(variable[0]);
-                testingForNumbers();
+                $('#answer').text(variable[2]);
+                testingForNumbersVar2();
             }
         }
     };
 
     eight.onclick = function () {
+        testingForEqual();
         counter += 1;
+
         if (counter < 13) {
             if (variable.length < 1) {
                 variable = [];
@@ -140,19 +223,21 @@ window.onload = function () {
             } else if (variable.length === 2) {
                 variable[2] = "8";
                 variable[2] = parseInt(variable[2]);
-                $('#answer').text(variable[0]);
-                testingForNumbers();
+                $('#answer').text(variable[2]);
+                testingForNumbersVar2();
             } else if (variable.length > 2) {
                 variable[2] += "8";
                 variable[2] = parseInt(variable[2]);
-                $('#answer').text(variable[0]);
-                testingForNumbers();
+                $('#answer').text(variable[2]);
+                testingForNumbersVar2();
             }
         }
     };
 
     seven.onclick = function () {
+        testingForEqual();
         counter += 1;
+
         if (counter < 13) {
             if (variable.length < 1) {
                 variable = [];
@@ -167,20 +252,22 @@ window.onload = function () {
                 testingForNumbers();
             } else if (variable.length === 2) {
                 variable[2] = "7";
-                variable[2] = parseInt(variable[2]);
-                $('#answer').text(variable[0]);
-                testingForNumbers();
+                variable[2] = parseInt(variable[2])
+                $('#answer').text(variable[2]);
+                testingForNumbersVar2();
             } else if (variable.length > 2) {
                 variable[2] += "7";
                 variable[2] = parseInt(variable[2]);
-                $('#answer').text(variable[0]);
-                testingForNumbers();
+                $('#answer').text(variable[2]);
+                testingForNumbersVar2();
             }
         }
     };
 
     six.onclick = function () {
+        testingForEqual();
         counter += 1;
+
         if (counter < 13) {
             if (variable.length < 1) {
                 variable = [];
@@ -196,19 +283,21 @@ window.onload = function () {
             } else if (variable.length === 2) {
                 variable[2] = "6";
                 variable[2] = parseInt(variable[2]);
-                $('#answer').text(variable[0]);
-                testingForNumbers();
+                $('#answer').text(variable[2]);
+                testingForNumbersVar2();
             } else if (variable.length > 2) {
                 variable[2] += "6";
                 variable[2] = parseInt(variable[2]);
-                $('#answer').text(variable[0]);
-                testingForNumbers();
+                $('#answer').text(variable[2]);
+                testingForNumbersVar2();
             }
         }
     };
 
     five.onclick = function () {
+        testingForEqual();
         counter += 1;
+
         if (counter < 13) {
             if (variable.length < 1) {
                 variable = [];
@@ -224,19 +313,21 @@ window.onload = function () {
             } else if (variable.length === 2) {
                 variable[2] = "5";
                 variable[2] = parseInt(variable[2]);
-                $('#answer').text(variable[0]);
-                testingForNumbers();
+                $('#answer').text(variable[2]);
+                testingForNumbersVar2();
             } else if (variable.length > 2) {
                 variable[2] += "5";
                 variable[2] = parseInt(variable[2]);
-                $('#answer').text(variable[0]);
-                testingForNumbers();
+                $('#answer').text(variable[2]);
+                testingForNumbersVar2();
             }
         }
     };
 
     four.onclick = function () {
+        testingForEqual();
         counter += 1;
+
         if (counter < 13) {
             if (variable.length < 1) {
                 variable = [];
@@ -252,19 +343,21 @@ window.onload = function () {
             } else if (variable.length === 2) {
                 variable[2] = "4";
                 variable[2] = parseInt(variable[2]);
-                $('#answer').text(variable[0]);
-                testingForNumbers();
+                $('#answer').text(variable[2]);
+                testingForNumbersVar2();
             } else if (variable.length > 2) {
                 variable[2] += "4";
                 variable[2] = parseInt(variable[2]);
-                $('#answer').text(variable[0]);
-                testingForNumbers();
+                $('#answer').text(variable[2]);
+                testingForNumbersVar2();
             }
         }
     };
 
     three.onclick = function () {
+        testingForEqual();
         counter += 1;
+
         if (counter < 13) {
             if (variable.length < 1) {
                 variable = [];
@@ -280,19 +373,21 @@ window.onload = function () {
             } else if (variable.length === 2) {
                 variable[2] = "3";
                 variable[2] = parseInt(variable[2]);
-                $('#answer').text(variable[0]);
-                testingForNumbers();
+                $('#answer').text(variable[2]);
+                testingForNumbersVar2();
             } else if (variable.length > 2) {
                 variable[2] += "3";
                 variable[2] = parseInt(variable[2]);
-                $('#answer').text(variable[0]);
-                testingForNumbers();
+                $('#answer').text(variable[2]);
+                testingForNumbersVar2();
             }
         }
     };
 
     two.onclick = function () {
+        testingForEqual();
         counter += 1;
+
         if (counter < 13) {
             if (variable.length < 1) {
                 variable = [];
@@ -308,19 +403,21 @@ window.onload = function () {
             } else if (variable.length === 2) {
                 variable[2] = "2";
                 variable[2] = parseInt(variable[2]);
-                $('#answer').text(variable[0]);
-                testingForNumbers();
+                $('#answer').text(variable[2]);
+                testingForNumbersVar2();
             } else if (variable.length > 2) {
                 variable[2] += "2";
                 variable[2] = parseInt(variable[2]);
-                $('#answer').text(variable[0]);
-                testingForNumbers();
+                $('#answer').text(variable[2]);
+                testingForNumbersVar2();
             }
         }
     };
 
     one.onclick = function () {
+        testingForEqual();
         counter += 1;
+
         if (counter < 13) {
             if (variable.length < 1) {
                 variable = [];
@@ -336,18 +433,19 @@ window.onload = function () {
             } else if (variable.length === 2) {
                 variable[2] = "1";
                 variable[2] = parseInt(variable[2]);
-                $('#answer').text(variable[0]);
-                testingForNumbers();
+                $('#answer').text(variable[2]);
+                testingForNumbersVar2();
             } else if (variable.length > 2) {
                 variable[2] += "1";
                 variable[2] = parseInt(variable[2]);
-                $('#answer').text(variable[0]);
-                testingForNumbers();
+                $('#answer').text(variable[2]);
+                testingForNumbersVar2();
             }
         }
     };
 
     zero.onclick = function () {
+        testingForEqual();
         counter += 1;
         if (counter < 13) {
             if (variable.length < 1) {
@@ -364,58 +462,111 @@ window.onload = function () {
             } else if (variable.length === 2) {
                 variable[2] = "0";
                 variable[2] = parseInt(variable[2]);
-                $('#answer').text(variable[0]);
-                testingForNumbers();
+                $('#answer').text(variable[2]);
+                testingForNumbersVar2();
             } else if (variable.length > 2) {
                 variable[2] += "0";
                 variable[2] = parseInt(variable[2]);
-                $('#answer').text(variable[0]);
-                testingForNumbers();
+                $('#answer').text(variable[2]);
+                testingForNumbersVar2();
             }
         }
     };
 
     divide.onclick = function () {
-        variable[1] = "/";
-        variable[0] += variable[1];
-        $('#answer').text(variable[0]);
-        console.log(variable);
+        if (!variable[1]) {
+            counter = 0;
+            removeClasses();
+            variable[1] = "/";
+            $('#answer').text(variable[1]);
+            console.log(variable);
+        }
     };
 
     plus.onclick = function () {
-        if (variable.length === 1) {
-            variable[1] = plus.value;
-            $('#answer').text(plus.value);
+        if (!variable[1]) {
+            removeClasses();
+            variable[1] = "+";
+            $('#answer').text(variable[1]);
+        } else if (globalEqual !== 0){
+            removeClasses();
+            variable = [];
+            variable[0] = globalEqual;
+            variable[1] = "+";
+            $('#answer').text(variable[1]);
         }
     };
 
     minus.onclick = function () {
-        if (variable.length === 1) {
-            variable[1] = minus.value;
-            $('#answer').text(minus.value);
+        if (!variable[1]) {
+            removeClasses();
+            variable[1] = "-";
+            $('#answer').text(variable[1]);
         }
     };
 
     x.onclick = function () {
-        if (variable.length === 1) {
-            variable[1] = x.value;
-            $('#answer').text(x.value);
+        if (!variable[1]) {
+            removeClasses();
+            variable[1] = "*";
+            $('#answer').text(variable[1]);
         }
     };
 
     tochka.onclick = function () {
-        $('#answer').text(tochka.value);
+        var count = 0;
+        count++;
+
+        if (count < 2) {
+            if (variable.length === 1) {
+                variable[0] += ",";
+                $('#answer').text(variable[0]);
+                testingForNumbers();
+            } else if (variable.length === 2) {
+                variable[2] = ",";
+                variable[2] = parseInt(variable[2]);
+                $('#answer').text(variable[2]);
+                testingForNumbersVar2();
+            } else if (variable.length > 2) {
+                variable[2] += ",";
+                variable[2] = parseInt(variable[2]);
+                $('#answer').text(variable[2]);
+                testingForNumbersVar2();
+            }
+        }
     };
 
     equal.onclick = function () {
-        if (variable[1] == "*") {
+        arrayLength = [];
+
+        if (variable[1] === "*") {
+            removeClasses();
             globalEqual = getProduct(variable[0], variable[2]);
-        } else if (variable[1] == "-") {
+            $('#answer').text(globalEqual);
+            console.log(variable);
+            globalEqual = globalEqual.toString();
+            arrayLength = globalEqual.split('');
+            console.log(arrayLength);
+            testingForNumbersInGlobalEqual();
+            globalEqual = parseInt(globalEqual);
+        } else if (variable[1] === "-") {
+            removeClasses();
             globalEqual = getDifference(variable[0], variable[2]);
-        } else if (variable[1] == "+") {
+            $('#answer').text(globalEqual);
+            testingForNumbersInGlobalEqual();
+            console.log(variable);
+        } else if (variable[1] === "+") {
+            removeClasses();
             globalEqual = getSum(variable[0], variable[2]);
-        } else if (variable[1] == "/") {
-            globalEqual = getQuotient(variable[0], variable[2])
+            $('#answer').text(globalEqual);
+            testingForNumbersInGlobalEqual();
+            console.log(variable);
+        } else if (variable[1] === "/") {
+            removeClasses();
+            globalEqual = getQuotient(variable[0], variable[2]);
+            $('#answer').text(globalEqual);
+            testingForNumbersInGlobalEqual();
+            console.log(variable);
         }
     };
 
@@ -424,15 +575,40 @@ window.onload = function () {
         variable = [];
         globalEqual = 0;
         counter = 0;
+        arrayLength = [];
         variable[0] = zero.value;
         $('#answer').text(0);
     };
 
     ce.onclick = function () {
-        removeClasses();
-        variable = [];
-        globalEqual = 0;
-        variable[0] = zero.value;
-        $('#answer').text(0);
+        if (variable[0] < 10) {
+            variable[0] = 0;
+            removeClasses();
+            $('#answer').text("0");
+        } else if (variable[2] < 10) {
+            variable[2] = 0;
+            removeClasses();
+            $('#answer').text("0");
+        } else if (variable[2]) {
+            arrayLength = [];
+            variable[2] = variable[2].toString();
+            arrayLength = variable[2].split('');
+            arrayLength.pop();
+            variable[2] = arrayLength.join('');
+            variable[2] = parseInt(variable[2]);
+            removeClasses();
+            testingForNumbersVar2();
+            $('#answer').text(variable[2]);
+        } else if (variable[0]) {
+            arrayLength = [];
+            variable[0] = variable[0].toString();
+            arrayLength = variable[0].split('');
+            arrayLength.pop();
+            variable[0] = arrayLength.join('');
+            variable[0] = parseInt(variable[0]);
+            removeClasses();
+            testingForNumbers();
+            $('#answer').text(variable[0]);
+        }
     }
 };
