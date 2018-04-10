@@ -34,16 +34,6 @@ function removeClasses() {
     $('#answer').removeClass('left13');
 }
 
-function testingForEqual() {
-    if (globalEqual !== 0) {
-        variable = [];
-        counter = 0;
-        arrayLength = [];
-        variable[0] = globalEqual;
-        removeClasses();
-    }
-}
-
 function testingForNumbersInGlobalEqual() {
     arrayLength = [];
     globalEqual = globalEqual.toString();
@@ -67,7 +57,7 @@ function testingForNumbersInGlobalEqual() {
         $('#answer').addClass('left9');
     } else if (arrayLength.length === 10) {
         $('#answer').addClass('left10');
-    } else if (arrayLength.length=== 11) {
+    } else if (arrayLength.length === 11) {
         $('#answer').addClass('left11');
     } else if (arrayLength.length === 12) {
         $('#answer').addClass('left12');
@@ -101,7 +91,7 @@ function testingForNumbers() {
         $('#answer').addClass('left9');
     } else if (arrayLength.length === 10) {
         $('#answer').addClass('left10');
-    } else if (arrayLength.length=== 11) {
+    } else if (arrayLength.length === 11) {
         $('#answer').addClass('left11');
     } else if (arrayLength.length === 12) {
         $('#answer').addClass('left12');
@@ -152,8 +142,6 @@ function testingForNumbersVar2() {
 }
 
 
-
-
 window.onload = function () {
     var ac = $('button')[0];
     var ce = $('button')[1];
@@ -175,12 +163,10 @@ window.onload = function () {
     var equal = $('button')[17];
 
     nine.onclick = function () {
-        testingForEqual();
         counter += 1;
 
         if (counter < 13) {
             if (variable.length < 1) {
-                variable = [];
                 variable[0] = nine.value;
                 variable[0] = parseInt(variable[0]);
                 $('#answer').text(variable[0]);
@@ -189,23 +175,25 @@ window.onload = function () {
                 variable[0] += "9";
                 variable[0] = parseInt(variable[0]);
                 $('#answer').text(variable[0]);
+                console.log(variable);
                 testingForNumbers();
             } else if (variable.length === 2) {
                 variable[2] = "9";
                 variable[2] = parseInt(variable[2]);
                 $('#answer').text(variable[2]);
+                console.log(variable);
                 testingForNumbersVar2();
             } else if (variable.length > 2) {
                 variable[2] += "9";
                 variable[2] = parseInt(variable[2]);
                 $('#answer').text(variable[2]);
+                console.log(variable);
                 testingForNumbersVar2();
             }
         }
     };
 
     eight.onclick = function () {
-        testingForEqual();
         counter += 1;
 
         if (counter < 13) {
@@ -235,7 +223,6 @@ window.onload = function () {
     };
 
     seven.onclick = function () {
-        testingForEqual();
         counter += 1;
 
         if (counter < 13) {
@@ -252,7 +239,7 @@ window.onload = function () {
                 testingForNumbers();
             } else if (variable.length === 2) {
                 variable[2] = "7";
-                variable[2] = parseInt(variable[2])
+                variable[2] = parseInt(variable[2]);
                 $('#answer').text(variable[2]);
                 testingForNumbersVar2();
             } else if (variable.length > 2) {
@@ -265,7 +252,6 @@ window.onload = function () {
     };
 
     six.onclick = function () {
-        testingForEqual();
         counter += 1;
 
         if (counter < 13) {
@@ -295,7 +281,6 @@ window.onload = function () {
     };
 
     five.onclick = function () {
-        testingForEqual();
         counter += 1;
 
         if (counter < 13) {
@@ -325,7 +310,6 @@ window.onload = function () {
     };
 
     four.onclick = function () {
-        testingForEqual();
         counter += 1;
 
         if (counter < 13) {
@@ -355,7 +339,6 @@ window.onload = function () {
     };
 
     three.onclick = function () {
-        testingForEqual();
         counter += 1;
 
         if (counter < 13) {
@@ -385,7 +368,6 @@ window.onload = function () {
     };
 
     two.onclick = function () {
-        testingForEqual();
         counter += 1;
 
         if (counter < 13) {
@@ -415,7 +397,6 @@ window.onload = function () {
     };
 
     one.onclick = function () {
-        testingForEqual();
         counter += 1;
 
         if (counter < 13) {
@@ -445,7 +426,6 @@ window.onload = function () {
     };
 
     zero.onclick = function () {
-        testingForEqual();
         counter += 1;
         if (counter < 13) {
             if (variable.length < 1) {
@@ -474,49 +454,55 @@ window.onload = function () {
     };
 
     divide.onclick = function () {
+        if (globalEqual !== 0) {
+            variable = [];
+            variable[0] = globalEqual;
+        }
         if (!variable[1]) {
             counter = 0;
             removeClasses();
             variable[1] = "/";
             $('#answer').text(variable[1]);
-        }else if (globalEqual === 0 && variable[2]){
-            equal.onclick();
         }
     };
 
     plus.onclick = function () {
+        if (globalEqual !== 0) {
+            variable = [];
+            variable[0] = globalEqual;
+        }
         if (!variable[1]) {
             removeClasses();
             variable[1] = "+";
             $('#answer').text(variable[1]);
-        } else if (globalEqual !== 0){
-            removeClasses();
-            variable = [];
-            variable[0] = globalEqual;
-            variable[1] = "+";
-            $('#answer').text(variable[1]);
-        } else if (globalEqual === 0 && variable[2]){
+        }
+        if (variable.length >= 3){
             equal.onclick();
         }
     };
 
     minus.onclick = function () {
+        if (globalEqual !== 0) {
+            variable = [];
+            variable[0] = globalEqual;
+        }
         if (!variable[1]) {
             removeClasses();
             variable[1] = "-";
             $('#answer').text(variable[1]);
-        } else if (globalEqual === 0 && variable[2]){
-            equal.onclick();
         }
     };
 
     x.onclick = function () {
+        if (globalEqual !== 0) {
+            variable = [];
+            variable[0] = globalEqual;
+        }
         if (!variable[1]) {
             removeClasses();
             variable[1] = "*";
             $('#answer').text(variable[1]);
-        }else if (globalEqual === 0 && variable[2]){
-            equal.onclick();
+            console.log(variable);
         }
     };
 
@@ -556,11 +542,19 @@ window.onload = function () {
             console.log(arrayLength);
             testingForNumbersInGlobalEqual();
             globalEqual = parseInt(globalEqual);
+            if (globalEqual !== 0) {
+                variable = [];
+                variable[0] = globalEqual;
+            }
         } else if (variable[1] === "-") {
             removeClasses();
             globalEqual = getDifference(variable[0], variable[2]);
             $('#answer').text(globalEqual);
             testingForNumbersInGlobalEqual();
+            if (globalEqual !== 0) {
+                variable = [];
+                variable[0] = globalEqual;
+            }
             console.log(variable);
         } else if (variable[1] === "+") {
             removeClasses();
@@ -568,12 +562,20 @@ window.onload = function () {
             $('#answer').text(globalEqual);
             testingForNumbersInGlobalEqual();
             console.log(variable);
+            if (globalEqual !== 0) {
+                variable = [];
+                variable[0] = globalEqual;
+            }
         } else if (variable[1] === "/") {
             removeClasses();
             globalEqual = getQuotient(variable[0], variable[2]);
             $('#answer').text(globalEqual);
             testingForNumbersInGlobalEqual();
             console.log(variable);
+            if (globalEqual !== 0) {
+                variable = [];
+                variable[0] = globalEqual;
+            }
         }
     };
 
@@ -589,14 +591,17 @@ window.onload = function () {
 
     ce.onclick = function () {
         if (variable[0] < 10) {
+            counter -= 1;
             variable[0] = 0;
             removeClasses();
             $('#answer').text("0");
         } else if (variable[2] < 10) {
+            counter -= 1;
             variable[2] = 0;
             removeClasses();
             $('#answer').text("0");
         } else if (variable[2]) {
+            counter -= 1;
             arrayLength = [];
             variable[2] = variable[2].toString();
             arrayLength = variable[2].split('');
@@ -607,6 +612,7 @@ window.onload = function () {
             testingForNumbersVar2();
             $('#answer').text(variable[2]);
         } else if (variable[0]) {
+            counter -= 1;
             arrayLength = [];
             variable[0] = variable[0].toString();
             arrayLength = variable[0].split('');
